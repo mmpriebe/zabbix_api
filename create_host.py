@@ -3,10 +3,11 @@
 
 from zabbix_api import ZabbixAPI
 import csv
+import os
 
-URL = 'http://{ip}}'
-USERNAME = 'user'
-PASSWORD = 'password'
+URL = os.environ.get('url')
+USERNAME = os.environ.get('user')
+PASSWORD = os.environ.get('password')
 
 try:
     zapi = ZabbixAPI(URL, timeout=15)
